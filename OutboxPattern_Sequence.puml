@@ -1,0 +1,18 @@
+@startuml
+
+actor User
+participant RequestService
+participant EmailService
+database SQL
+
+User -> RequestService: Request
+RequestService -> SQL: Update
+SQL -> RequestService: Update Complete
+
+loop
+EmailService <- SQL: Unsent Message
+EmailService -> User: Confirmation Email
+EmailService -> SQL: Message Sent
+end
+
+@enduml
