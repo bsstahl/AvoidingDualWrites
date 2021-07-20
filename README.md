@@ -5,3 +5,6 @@ Demos of patterns and practices to help avoid the dual-writes anti-pattern in yo
 
 [Sequence Diagram](OutboxPattern_Sequence.puml)
 
+## Demo 2 - Change Data Capture
+
+[Sequence Diagram](CDC_Sequence.puml)
