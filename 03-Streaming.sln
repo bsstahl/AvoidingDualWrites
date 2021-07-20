@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.223
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C15F4CC0-D716-4E9B-9B52-DB68F938370B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		Streaming_Sequence.puml = Streaming_Sequence.puml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{253CE721-4195-4AA9-B9D7-C6F85AB109DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailClient", "99-Common\EmailClient\EmailClient.csproj", "{9654ECEA-528A-4367-9285-FD20D6C0F0E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "99-Common\Domain\Domain.csproj", "{BB404B61-BCD5-4959-B57F-F16BE0FD5B78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailService", "03-Streaming\EmailService\EmailService.csproj", "{008CD44D-53A7-4490-BF98-EC5F0FBC9AF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestService", "03-Streaming\RequestService\RequestService.csproj", "{0E5EF514-1D38-48D7-A879-20941989C6E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9654ECEA-528A-4367-9285-FD20D6C0F0E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9654ECEA-528A-4367-9285-FD20D6C0F0E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9654ECEA-528A-4367-9285-FD20D6C0F0E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9654ECEA-528A-4367-9285-FD20D6C0F0E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB404B61-BCD5-4959-B57F-F16BE0FD5B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB404B61-BCD5-4959-B57F-F16BE0FD5B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB404B61-BCD5-4959-B57F-F16BE0FD5B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB404B61-BCD5-4959-B57F-F16BE0FD5B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{008CD44D-53A7-4490-BF98-EC5F0FBC9AF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{008CD44D-53A7-4490-BF98-EC5F0FBC9AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{008CD44D-53A7-4490-BF98-EC5F0FBC9AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{008CD44D-53A7-4490-BF98-EC5F0FBC9AF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E5EF514-1D38-48D7-A879-20941989C6E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E5EF514-1D38-48D7-A879-20941989C6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E5EF514-1D38-48D7-A879-20941989C6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E5EF514-1D38-48D7-A879-20941989C6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9654ECEA-528A-4367-9285-FD20D6C0F0E8} = {253CE721-4195-4AA9-B9D7-C6F85AB109DE}
+		{BB404B61-BCD5-4959-B57F-F16BE0FD5B78} = {253CE721-4195-4AA9-B9D7-C6F85AB109DE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A2BE3EE-03D6-40EC-BAE2-DB88C9AB39BB}
+	EndGlobalSection
+EndGlobal

@@ -8,3 +8,7 @@ Demos of patterns and practices to help avoid the dual-writes anti-pattern in yo
 ## Demo 2 - Change Data Capture
 
 [Sequence Diagram](CDC_Sequence.puml)
+
+## Demo 3 - Data Streaming
+
+[Sequence Diagram](Streaming_Sequence.puml)
