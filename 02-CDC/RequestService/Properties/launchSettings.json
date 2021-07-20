@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RequestService": {
+      "commandName": "Project",
+      "commandLineArgs": "abc@123.com \"Test Request\""
+    }
+  }
+}

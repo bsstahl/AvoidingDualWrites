@@ -1,0 +1,18 @@
+@startuml
+
+actor User
+participant RequestService
+participant EmailService
+database Cosmos
+
+User -> RequestService: Request
+RequestService -> Cosmos: Update
+Cosmos -> RequestService: Update Complete
+
+loop
+Cosmos -> EmailService: Changed Document
+EmailService -> User: Confirmation Email
+EmailService -> Cosmos: Message Sent
+end
+
+@enduml

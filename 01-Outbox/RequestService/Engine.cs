@@ -1,6 +1,7 @@
 ﻿using System;
 using Domain.Entities;
 using Domain.Interfaces;
+using Domain.Extensions;
 using Serilog;
 
 namespace RequestService
@@ -22,8 +23,8 @@ namespace RequestService
             // be put in the email service. It is placed here because
             // this is where it would be if we were doing a dual-write
             string requestId = request.Id.ToString("D");
-            string emailSubject = $"(Do not reply) Request Received ({requestId})";
-            string emailBody = $"Your request with tracking Id {requestId} was received and will be processed as soon as possible.";
+            string emailSubject = request.GetEmailSubject();
+            string emailBody = request.GetEmailBody();
 
             _repo.SaveRequest(request.Id, request.CustomerEmail, request.Description, emailSubject, emailBody);
 
