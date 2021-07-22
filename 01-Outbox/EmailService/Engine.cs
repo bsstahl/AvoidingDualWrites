@@ -8,8 +8,9 @@ namespace EmailService
 {
     public class Engine: IHandleUnsentMessages
     {
+        // TODO: Make the message handler common for all demos
+
         const int _delayBetweenChecksMs = 1000;
-        const string _connection = "Server=tcp:{0}.database.windows.net,1433;Initial Catalog={1};Persist Security Info=False;User ID={2};Password={3};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         private readonly IMessageRepository _repo;
         private readonly ISendMessages _emailClient;
