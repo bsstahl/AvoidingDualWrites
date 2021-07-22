@@ -6,7 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C15F4CC0-D716-4E9B-9B52-DB68F938370B}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		Streaming_Sequence.puml = Streaming_Sequence.puml
+		03-Streaming\Streaming_Sequence.puml = 03-Streaming\Streaming_Sequence.puml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{253CE721-4195-4AA9-B9D7-C6F85AB109DE}"
