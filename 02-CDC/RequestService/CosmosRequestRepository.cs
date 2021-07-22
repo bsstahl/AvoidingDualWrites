@@ -11,8 +11,6 @@ namespace RequestService
 {
     public class CosmosRequestRepository : IRequestRepository
     {
-        // const string _insertRequestSql = "insert into tblRequests (Id, CustomerEmail, Description) values (@id, @customerEmail, @description)";
-
         private readonly CosmosClient _cosmosClient;
         private readonly IConfiguration _config;
 

@@ -27,8 +27,7 @@ namespace EmailService
                         _ = builder
                             .SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appsettings.json", false)
-                            .AddUserSecrets<Engine>()
-                            .AddEnvironmentVariables();
+                            .AddUserSecrets<Engine>();
                     }
                 )
                 .ConfigureLogging((hostContext, logging) => logging.AddSerilog())

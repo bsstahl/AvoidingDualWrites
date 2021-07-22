@@ -20,6 +20,7 @@ namespace RequestService
               .CreateLogger();
 
             var config = new ConfigurationBuilder()
+                .AddJsonFile("settings.json")
                 .AddUserSecrets<Engine>()
                 .Build();
 

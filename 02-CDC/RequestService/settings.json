@@ -1,0 +1,7 @@
+{
+  "ConnectionStrings": {
+    "Cosmos": "AccountEndpoint=https://{0}.documents.azure.com:443/;AccountKey={1};"
+  },
+  "DatabaseId": "DualWrites",
+  "ContainerId": "Requests"
+}

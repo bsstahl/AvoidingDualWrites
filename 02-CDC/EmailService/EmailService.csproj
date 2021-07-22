@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="C:\Users\bstahl\.nuget\packages\microsoft.azure.cosmos\3.20.1\contentFiles\any\netstandard2.0\ThirdPartyNotice.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Dapper" Version="2.0.90" />
 		<PackageReference Include="Microsoft.Azure.Cosmos" Version="3.20.1" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
