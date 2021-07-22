@@ -11,19 +11,25 @@ namespace EmailService
 {
     public class MessageRepository : IMessageRepository
     {
-        const string _selectQuery = "select top 1 Id, SendToAddress, MessageSubject, MessageBody from dbo.tblMessages where Sent=0";
-        const string _updateQuery = "update dbo.tblMessages set Sent=1 where Id=@id";
-        const string _connection = "Server=tcp:{0}.database.windows.net,1433;Initial Catalog={1};Persist Security Info=False;User ID={2};Password={3};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        const string _connectionKey = "sql";
+        const string _servernameKey = "DBServerName";
+        const string _dbNameKey = "DBDatabaseName";
+        const string _dbUsernameKey = "DBUsername";
+        const string _dbPasswordKey = "DBPassword";
+
+        const string _selectQuery = "select top 1 [Id], [SendToAddress], [MessageSubject], [MessageBody] from dbo.[tblMessages] where [Sent]=0";
+        const string _updateQuery = "update dbo.[tblMessages] set [Sent]=1 where [Id]=@id";
 
         private readonly string _connectionString;
 
         public MessageRepository(IConfiguration config)
         {
-            _connectionString = string.Format(_connection, config["DBServerName"], config["DBDatabaseName"], config["DBUsername"], config["DBPassword"]);
+            _connectionString = string.Format(config.GetConnectionString(_connectionKey), config[_servernameKey], config[_dbNameKey], config[_dbUsernameKey], config[_dbPasswordKey]);
         }
 
         public Message GetUnsentMessage()
         {
+            // TODO: Add error handling
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
@@ -33,6 +39,7 @@ namespace EmailService
 
         public void UpdateMessageSent(Guid id)
         {
+            // TODO: Add error handling and retry
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();

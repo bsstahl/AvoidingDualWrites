@@ -5,8 +5,7 @@ VisualStudioVersion = 16.0.31410.223
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C15F4CC0-D716-4E9B-9B52-DB68F938370B}"
 	ProjectSection(SolutionItems) = preProject
-		OutboxPattern_Sequence.puml = OutboxPattern_Sequence.puml
-		README.md = README.md
+		01-Outbox\OutboxPattern_Sequence.puml = 01-Outbox\OutboxPattern_Sequence.puml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{253CE721-4195-4AA9-B9D7-C6F85AB109DE}"
@@ -17,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "99-Common\Domain\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailService", "01-Outbox\EmailService\EmailService.csproj", "{E4752E69-B669-4A62-9F95-29A04BCA9DA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestService", "01-Outbox\RequestService\RequestService.csproj", "{206E7019-2797-4A9B-BBD1-63357F35CFBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestService", "01-Outbox\RequestService\RequestService.csproj", "{206E7019-2797-4A9B-BBD1-63357F35CFBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

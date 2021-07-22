@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.Extensions.Configuration;

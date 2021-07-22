@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection.Metadata.Ecma335;
 using Domain.Interfaces;
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Configuration;

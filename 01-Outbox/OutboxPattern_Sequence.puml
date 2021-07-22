@@ -13,6 +13,7 @@ loop
 EmailService <- SQL: Unsent Message
 EmailService -> User: Confirmation Email
 EmailService -> SQL: Message Sent
+SQL -> EmailService: Update Complete
 end
 
 @enduml
