@@ -12,3 +12,7 @@ Demos of patterns and practices to help avoid the dual-writes anti-pattern in yo
 ## Demo 3 - Data Streaming
 
 [Sequence Diagram](./03-Streaming/Streaming_Sequence.puml)
+
+# Video Presentation
+
+[The Valley's .NET User Groups - Eliminating Hidden Dangers to Your Applications: Patterns for Reliable Systems - 2021-07-22](https://youtu.be/g6tnRWN9vy0)
