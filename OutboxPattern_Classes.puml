@@ -1,0 +1,33 @@
+@startuml
+
+interface RequestService.IIssueRequests
+interface RequestService.IRequestRepository
+
+class RequestService.Program
+class RequestService.Engine
+class RequestService.RequestRepository
+
+interface EmailService.IMessageRepository
+interface EmailService.IHandleUnsentMessages
+interface EmailService.ISendMessages
+
+RequestService.IIssueRequests <|-- RequestService.Engine
+RequestService.IRequestRepository <|-- RequestService.RequestRepository
+
+class EmailService.Program
+class EmailService.MessageRepository
+class EmailService.Engine
+class EmailService.EmailClient
+
+EmailService.IMessageRepository <|-- EmailService.MessageRepository
+EmailService.IHandleUnsentMessages <|-- EmailService.Engine
+EmailService.ISendMessages <|-- EmailService.EmailClient 
+
+RequestService.Program -- RequestService.IIssueRequests: IssueRequest
+RequestService.Engine -- RequestService.IRequestRepository: SaveRequest
+
+EmailService.Program -- EmailService.IHandleUnsentMessages: ProcessAsync
+EmailService.Engine -- EmailService.IMessageRepository :GetUnsentMessage
+EmailService.Engine -- EmailService.ISendMessages : Send
+EmailService.Engine -- EmailService.IMessageRepository: UpdateMessageSent
+@enduml

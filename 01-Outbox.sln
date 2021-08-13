@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C15F4CC0-D716-4E9B-9B52-DB68F938370B}"
 	ProjectSection(SolutionItems) = preProject
 		01-Outbox\Sql\Notebook.ipynb = 01-Outbox\Sql\Notebook.ipynb
+		OutboxPattern_Classes.puml = OutboxPattern_Classes.puml
 		01-Outbox\OutboxPattern_Sequence.puml = 01-Outbox\OutboxPattern_Sequence.puml
 		README.md = README.md
 		01-Outbox\Sql\tblMessages_Create.sql = 01-Outbox\Sql\tblMessages_Create.sql
