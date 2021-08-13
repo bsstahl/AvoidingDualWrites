@@ -7,12 +7,12 @@ class RequestService.Program
 class RequestService.Engine
 class RequestService.RequestRepository
 
+RequestService.IIssueRequests <|-- RequestService.Engine
+RequestService.IRequestRepository <|-- RequestService.RequestRepository
+
 interface EmailService.IMessageRepository
 interface EmailService.IHandleUnsentMessages
 interface EmailService.ISendMessages
-
-RequestService.IIssueRequests <|-- RequestService.Engine
-RequestService.IRequestRepository <|-- RequestService.RequestRepository
 
 class EmailService.Program
 class EmailService.MessageRepository
@@ -30,4 +30,5 @@ EmailService.Program -- EmailService.IHandleUnsentMessages: ProcessAsync
 EmailService.Engine -- EmailService.IMessageRepository :GetUnsentMessage
 EmailService.Engine -- EmailService.ISendMessages : Send
 EmailService.Engine -- EmailService.IMessageRepository: UpdateMessageSent
+
 @enduml
