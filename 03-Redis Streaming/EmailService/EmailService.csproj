@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<UserSecretsId>e731b6aa-4861-4684-af84-d1f6957297cc</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Remove="C:\Users\bstahl\.nuget\packages\microsoft.azure.cosmos\3.20.1\contentFiles\any\netstandard2.0\ThirdPartyNotice.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+		<PackageReference Include="Serilog" Version="2.10.1-dev-01343" />
+		<PackageReference Include="Serilog.Extensions.Logging" Version="3.0.2-dev-10289" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="4.0.1-dev-00874" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="StackExchange.Redis" Version="2.2.50" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\99-Common\Domain\Domain.csproj" />
+		<ProjectReference Include="..\..\99-Common\EmailClient\EmailClient.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="appsettings.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
