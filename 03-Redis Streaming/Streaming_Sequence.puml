@@ -3,16 +3,16 @@
 actor User
 participant RequestService
 participant EmailService
-queue Kafka
+queue Redis
 
 User -> RequestService: Request
-RequestService -> Kafka: Request Message
-Kafka -> RequestService: Message Produced
+RequestService -> Redis: Request Message
+Redis -> RequestService: Message Produced
 
 loop
-Kafka -> EmailService: Request Message
+Redis -> EmailService: Request Message
 EmailService -> User: Confirmation Email
-EmailService -> Kafka: Message Consumed
+EmailService -> Redis: Message Consumed
 end
 
 @enduml

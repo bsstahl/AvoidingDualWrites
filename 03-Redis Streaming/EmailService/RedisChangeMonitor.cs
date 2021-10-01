@@ -50,7 +50,6 @@ namespace EmailService
         {
             Log.Information("Subscribed to stream {topicName}", _topicKey);
 
-            // var streamInfo = consumer.Execute($"xinfo", "stream", _topicName, "full");
             var streamInfo = consumer.StreamInfo(_topicKey);
             var jsonInfo = JsonConvert.SerializeObject(streamInfo);
             Log.Debug("Stream Content: {content}", jsonInfo);
