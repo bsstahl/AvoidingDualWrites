@@ -31,7 +31,9 @@ namespace EmailService
 
             _topicKey = config["RedisStreamName"];
             _consumerGroupName = config["ConsumerGroupId"];
-            _clientId = config["ClientId"];
+            
+            var consumerName = config["ClientId"];
+            _clientId = $"{consumerName}_{this.InstanceId}";
             _emptyStreamDelay = Int32.Parse(config["EmptyStreamDelayMs"]);
 
             _messageHandler = messageHandler;
@@ -58,12 +60,14 @@ namespace EmailService
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                var messages = await consumer.StreamReadGroupAsync(_topicKey, _consumerGroupName, _clientId, StreamPosition.NewMessages);
+                var messages = await consumer.StreamReadGroupAsync(_topicKey, _consumerGroupName, _clientId, StreamPosition.NewMessages, count: 1, noAck: false);
                 {
                     if (!messages.Any())
                         await Task.Delay(_emptyStreamDelay, stoppingToken);
                     else
                     {
+                        var pendingMessages = await consumer.ExecuteAsync("XPENDING", _topicKey, _consumerGroupName);
+                        Log.Debug(JsonConvert.SerializeObject(pendingMessages));
                         foreach (var message in messages)
                         {
                             await this.ProcessMessageAsync(message.Values[0].Name, message.Values[0].Value);
@@ -80,8 +84,15 @@ namespace EmailService
 
             Log.Information("Processing message {key}", key);
             var request = JsonConvert.DeserializeObject<Request>(value);
-            await _messageHandler.ProcessAsync(request);
-            Log.Information("Processsing message {key} completed", value);
+            try
+            {
+                await _messageHandler.ProcessAsync(request);
+                Log.Information("Processsing message {key} completed", value);
+            }
+            catch (Exception)
+            {
+                Log.Information("Unable to process message with key {key}", value);
+            }
         }
 
     }
