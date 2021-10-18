@@ -17,6 +17,7 @@ namespace RequestService
 
             var config = new ConfigurationBuilder()
                 .AddUserSecrets<Engine>()
+                .AddJsonFile("settings.json")
                 .Build();
 
             var services = new ServiceCollection()
